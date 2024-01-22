@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 35px;
+            padding: 20px;
+        }
+
+        .emoji {
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.5s ease-out;
+            border-radius: 35px;
+            background-color: #f8f8f8;
+            padding: 15px;
+        }
+
+        .counter {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+    <title>Your Website</title>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji" onclick="enlargeEmoji()">😎</div>
+        <div class="counter" id="counter">Sigma Level: 0</div>
+    </div>
+
+    <script>
+        let clickCount = 0;
+
+        function enlargeEmoji() {
+            const emoji = document.querySelector('.emoji');
+            clickCount++;
+            document.getElementById('counter').textContent = `Sigma Level: ${clickCount}`;
+            
+            emoji.style.transform = 'scale(1.5)';
+            setTimeout(() => {
+                emoji.style.transform = 'scale(1)';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
